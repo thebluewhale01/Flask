@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+  <head> 
+     <title>GPIO Control</title> 
+     <link rel="stylesheet" href='../static/style.css'> 
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head> 
+  <body> 
+       
+        <center><h1>RPi GPIO Control</h1></center> 
+        <center><img src="{{ url_for('video_feed') }}" width='720' height='480' autoplay playsinline></center> <br/><br/><br/>
+		<!--center><img src="http://127.0.0.1:9000/stream.mjpg" width='360' height='240' autoplay playsinline></center-->
+<br>
+        <div class="w3-container">
+            <!--p><strong>w3-bar-item</strong> class:</p-->
+            <div class="w3-bar">
+    
+            </div>
+            
+        </div>
+        <center>
+		<h2> Actuator Status & Control </h2> 
+		<h3> RED LED ==>  {{ ledRed  }}  ==>   
+			{% if  ledRed   == 1 %} 
+				<a href="/ledRed/off"class="w3-bar-item w3-button w3-black">TURN OFF</a> 
+			{% else %} 
+				<a href="/ledRed/on" class="w3-bar-item w3-button w3-black">TURN ON</a>  
+			{% endif %}	 
+		</h3> 
+		<h3> YLW LED ==>  {{ ledYlw  }}  ==>   
+			{% if  ledYlw   == 1 %} 
+				<a href="/ledYlw/off"class="w3-bar-item w3-button w3-teal">TURN OFF</a> 
+			{% else %} 
+				<a href="/ledYlw/on" class="w3-bar-item w3-button w3-teal">TURN ON</a>  
+			{% endif %}	 
+		</h3> 
+		<h3> GRN LED ==>  {{ ledGrn  }}  ==>   
+			{% if  ledGrn   == 1 %} 
+				<a href="/ledGrn/off"class="w3-bar-item w3-button w3-red">TURN OFF</a> 
+			{% else %} 
+				<a href="/ledGrn/on" class="w3-bar-item w3-button w3-red">TURN ON</a>  
+			{% endif %}	 
+		</h3> 
+		</center>
+        <center><h3>
+            {% if  ledRed   == 1 %} 
+				<a href="/ledRed/off"class="w3-bar-item w3-button w3-black">TURN OFF</a> 
+			{% else %} 
+				<a href="/ledRed/on" class="w3-bar-item w3-button w3-black">TURN ON</a>  
+			{% endif %}	 
+            <br/><br/>
+            {% if  ledYlw   == 1 %} 
+				<a href="/ledYlw/off"class="w3-bar-item w3-button w3-teal">TURN OFF</a> 
+			{% else %} 
+				<a href="/ledYlw/on" class="w3-bar-item w3-button w3-teal">TURN ON</a>  
+			{% endif %}	 
+            <br/><br/>
+            {% if  ledGrn   == 1 %} 
+				<a href="/ledGrn/off"class="w3-bar-item w3-button w3-red">TURN OFF</a> 
+			{% else %} 
+				<a href="/ledGrn/on" class="w3-bar-item w3-button w3-red">TURN ON</a>  
+			{% endif %}	
+        </h3></center>
+  </body> 
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Raspi Car</title>
+</head>
+<body>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+        body{
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        #wrapper{
+            background: #232323;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;*/ 
+        }
+        h1{
+            
+            font-size: 3rem;
+            
+        }
+        .button{
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f0e4e4;
+            text-decoration: none;
+            border-radius: 100px;
+            transition: all 0.25s ease;
+
+        }
+        a.button.messenger{
+            background: #0099FF;    
+            color: #fff;
+            /*right : 50%;*/
+            /*margin-top: 375px;*/
+            
+        }
+        a.button.messenger:hover{
+            background: #0272bd;
+        }
+
+        b.button.youtube{
+            background: #CD201F;
+            color: #fff;
+            margin-left: -25px;  
+            /*margin-bottom: 200px; */
+        }
+        b.button.youtube:hover{
+            background: #9a1717;
+        }
+
+        c.button.youtube1{
+            background: #CD201F;
+            color: #fff;
+            /*margin-right: -75px;*/
+            /*left: 50%;*/
+        }
+        c.button.youtube1:hover{
+            background: #9a1717;
+        }
+
+        d.button.youtube2{
+            
+            background: #CD201F;
+            color: #fff;
+        }
+        d.button.youtube2:hover{
+            background: #9a1717;
+        }
+
+        .button-icon{
+            font-size: 20px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        // forward function 
+        function forward_func(element, color,action) {
+            if(!color) {
+            color = element.dataset.normalColor;
+            $.ajax({
+                type: "POST", url: "/",data:{data:'stop'},
+                success: function(result) {
+                    console.log('good');
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            });
+            } else {
+            element.dataset.normalColor = element.style.backgroundColor;
+            $.ajax({type: "POST", url: "/", data:{data:action},
+                success: function(result) {
+                    console.log('good');
+                },
+                error: function(result) {
+                    alert('error');
+                }
+            });
+            }
+            element.style.backgroundColor = color;
+        }
+        </script>
+    <div id = "wrapper">
+        <h1> <center>Raspi Car </center></h1>
+        <!--center><img src="{{ url_for('video_feed') }}" width='720' height='480' autoplay playsinline></center> <br/><br/><br/-->
+        <div class="list-button">
+            <a onpointerdown="forward_func(this,'blue','forward')" onpointerup="forward_func(this)" class="button messenger">
+                <span class="button-icon">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </span>
+                <!--span class="button-text">
+                    Chat ngay
+                </span-->
+            </a><br><br>
+
+            <b href="/ledRed/off" class="button youtube">
+                <span class="button-icon">
+                    <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                </span>
+                <!--span class="button-text">
+                    Chat ngay
+                </span-->
+            </b>
+
+            <c href="/ledGrn/on" class="button youtube1">
+                <span class="button-icon">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+                <!--span class="button-text">
+                    Chat ngay
+                </span-->
+            </c><br><br>
+
+            <d href="#" class="button youtube2">
+                <span class="button-icon">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </span>
+                <!--span class="button-text">
+                    Chat ngay
+                </span-->
+            </d>
+        </div>
+        <!--d href="#" class="button youtube2">
+            <span class="button-icon">
+                <i class="fa-solid fa-arrow-down"></i>
+            </span>
+            <span class="button-text">
+                Chat ngay
+            </span>
+        </d-->
+        
+    </div>
+
+    
+</body>
+</html>

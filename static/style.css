@@ -1,0 +1,23 @@
+body {
+	background: rgb(34, 34, 37);
+	color: rgb(239, 232, 232);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+}
+.button {
+  display: inline-block;
+  font: bold 20px Arial;
+  text-decoration: none;
+  background-color: #6d5959;
+  color: #333333;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+
+  font-size: 50px;
+  
+}

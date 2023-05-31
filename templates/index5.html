@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+    <link rel="stylesheet" href='../static/master.css'/> 
+  </head>
+  <body>
+    <center><h1>Video Streaming Demonstration</h1></center>
+    <center><img src="{{ url_for('video_feed') }}" width='720' height='480' autoplay playsinline></center> <br/><br/><br/>
+
+	<center> <h2> Actuator Status & Control </h2> </center> 
+
+		<h3> 
+			<center>
+				<a href="/ledRed/on">
+					</a><button> TURN on </button></a>
+			</center> 
+		</h3> 
+
+		<h3> 
+			<center>
+				<a href="/ledYlw/on">
+					</a><button> TURN on </button></a>
+			</center> 
+		</h3> 
+
+		<h3> 
+			<center>
+				<a href="/ledGrn/on">
+					</a><button> TURN on </button></a>
+			</center> 
+		</h3> 
+    
+  </body>
+</html>

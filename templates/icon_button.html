@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Raspi Car</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+        body{
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        #wrapper{
+            background: #232323;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+        }
+        h1{
+            
+            font-size: 3rem;
+        }
+        a.button{
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f0e4e4;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.25s ease;
+
+        }
+        a.button.messenger{
+            background: #0099FF;
+            color: #fff;
+        }
+        a.button.messenger:hover{
+            background: #0272bd;
+        }
+        a.button.youtube{
+            background: #CD201F;
+            color: #fff;
+        }
+        a.button.youtube:hover{
+            background: #9a1717;
+        }
+        .button-icon{
+            font-size: 20px;
+        }
+
+    </style>
+    <div id = "wrapper">
+        <h1> Raspi Car </h1>
+        <div class="list-button">
+            <a href="/ledRed/on" class="button messenger">
+                <span class="button-icon">
+                    <i class="fa-brands fa-facebook-messenger"></i>
+                </span>
+                <span class="button-text">
+                    Chat ngay
+                </span>
+            </a>
+
+            <a href="/ledYlw/on" class="button youtube">
+                <span class="button-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </span>
+                <span class="button-text">
+                    Chat ngay
+                </span>
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button</title>
+</head>
+<body>
+
+    <button onmousedown="start()" onmouseup="end()">Click and hold</button>
+    <p id="counter"></p>
+    <script>
+        var wrapper = document.getElementById('counter');
+        var counter;
+        var counterr;
+        var a = 0;
+        var count = 0;
+  
+        function start() {
+            counter = setInterval(function() {
+            wrapper.innerHTML = count;
+            count++;
+            }, 500);
+        }
+
+        
+        
+        function end() {
+            clearInterval(counter)
+        }
+    </script>
+    
+
+
+
+</body>
+</html>
